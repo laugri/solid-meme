@@ -1,0 +1,28 @@
+{
+  "name": "solid-meme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:laugri/solid-meme.git",
+  "author": "Laurent Grima <grima.laurent@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^21.2.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^4.11.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "flow-bin": "^0.59.0",
+    "flow-typed": "^2.2.3",
+    "jest": "^21.2.1",
+    "pre-push": "^0.1.1",
+    "prettier": "^1.8.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "lint": "./node_modules/.bin/eslint .",
+    "validate": "jest --coverage && flow && ./node_modules/.bin/eslint ."
+  },
+  "pre-push": ["validate"]
+}
