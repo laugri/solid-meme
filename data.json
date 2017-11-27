@@ -1,0 +1,53 @@
+{
+  "facilities": {
+    "sink": {
+      "output": 2
+    },
+    "bathtub": {
+      "output": 5
+    },
+    "shower": {
+      "output": 1
+    }
+  },
+  "apartments": {
+    "small": {
+      "facilities": [
+        { "type": "sink", "quantity": 1 },
+        { "type": "shower", "quantity": 1 }
+      ]
+    },
+    "large": {
+      "facilities": [
+        { "type": "sink", "quantity": 2 },
+        { "type": "bathtub", "quantity": 1 }
+      ]
+    }
+  },
+  "buildings": [
+    {
+      "name": "A",
+      "floors": 2,
+      "apartmentType": "small",
+      "apartmentsPerFloor": 4
+    },
+    {
+      "name": "B",
+      "floors": 3,
+      "apartmentType": "small",
+      "apartmentsPerFloor": 4
+    },
+    {
+      "name": "C",
+      "floors": 4,
+      "apartmentType": "large",
+      "apartmentsPerFloor": 2
+    },
+    {
+      "name": "D",
+      "floors": 5,
+      "apartmentType": "large",
+      "apartmentsPerFloor": 2
+    }
+  ]
+}
