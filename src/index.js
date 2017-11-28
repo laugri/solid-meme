@@ -18,13 +18,15 @@ type CustomApartment = Apartment & {
 
 export function buildResidenceOutputMap(buildings: Array<Building>) {
   const residenceOutputMap = { buildings: [], total: 0 };
-  buildings.reduce((acc, building) => {
-    const buildingMap = buildBuildingOutputMap(building);
-    acc.buildings.push(buildingMap);
-    acc.total += buildingMap.total;
-    return acc;
-  }, residenceOutputMap);
+  buildings.reduce(residenceReducer, residenceOutputMap);
   return residenceOutputMap;
+}
+
+function residenceReducer(residenceMap, building) {
+  const buildingMap = buildBuildingOutputMap(building);
+  residenceMap.buildings.push(buildingMap);
+  residenceMap.total += buildingMap.total;
+  return residenceMap;
 }
 
 export function buildBuildingOutputMap(building: Building) {
