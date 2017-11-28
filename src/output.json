@@ -1,0 +1,151 @@
+{
+  "total": 222,
+  "buildings": [
+    {
+      "total": 24,
+      "name": "A",
+      "floors": [
+        {
+          "number": 1,
+          "total": 12,
+          "apartments": [
+            { "number": 1, "total": 3 },
+            { "number": 2, "total": 3 },
+            { "number": 3, "total": 3 },
+            { "number": 4, "total": 3 }
+          ]
+        },
+        {
+          "number": 2,
+          "total": 12,
+          "apartments": [
+            { "number": 1, "total": 3 },
+            { "number": 2, "total": 3 },
+            { "number": 3, "total": 3 },
+            { "number": 4, "total": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "total": 36,
+      "name": "B",
+      "floors": [
+        {
+          "number": 1,
+          "total": 12,
+          "apartments": [
+            { "number": 1, "total": 3 },
+            { "number": 2, "total": 3 },
+            { "number": 3, "total": 3 },
+            { "number": 4, "total": 3 }
+          ]
+        },
+        {
+          "number": 2,
+          "total": 12,
+          "apartments": [
+            { "number": 1, "total": 3 },
+            { "number": 2, "total": 3 },
+            { "number": 3, "total": 3 },
+            { "number": 4, "total": 3 }
+          ]
+        },
+        {
+          "number": 3,
+          "total": 12,
+          "apartments": [
+            { "number": 1, "total": 3 },
+            { "number": 2, "total": 3 },
+            { "number": 3, "total": 3 },
+            { "number": 4, "total": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "total": 72,
+      "name": "C",
+      "floors": [
+        {
+          "number": 1,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 2,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 3,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 4,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        }
+      ]
+    },
+    {
+      "total": 90,
+      "name": "D",
+      "floors": [
+        {
+          "number": 1,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 2,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 3,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 4,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        },
+        {
+          "number": 5,
+          "total": 18,
+          "apartments": [
+            { "number": 1, "total": 9 },
+            { "number": 2, "total": 9 }
+          ]
+        }
+      ]
+    }
+  ]
+}
