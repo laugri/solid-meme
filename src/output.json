@@ -1,5 +1,5 @@
 {
-  "total": 222,
+  "total": 232,
   "buildings": [
     {
       "total": 24,
@@ -102,14 +102,14 @@
       ]
     },
     {
-      "total": 90,
+      "total": 100,
       "name": "D",
       "floors": [
         {
           "number": 1,
-          "total": 18,
+          "total": 28,
           "apartments": [
-            { "number": 1, "total": 9 },
+            { "number": 1, "total": 19 },
             { "number": 2, "total": 9 }
           ]
         },

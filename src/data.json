@@ -8,6 +8,9 @@
     },
     "shower": {
       "output": 1
+    },
+    "jacuzzi": {
+      "output": 10
     }
   },
   "apartments": {
@@ -47,7 +50,18 @@
       "name": "D",
       "floors": 5,
       "apartmentType": "large",
-      "apartmentsPerFloor": 2
+      "apartmentsPerFloor": 2,
+      "customApartments": [
+        {
+          "floorNumber": 1,
+          "apartmentNumber": 1,
+          "facilities": [
+            { "type": "sink", "quantity": 2 },
+            { "type": "bathtub", "quantity": 1 },
+            { "type": "jacuzzi", "quantity": 1 }
+          ]
+        }
+      ]
     }
   ]
 }

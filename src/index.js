@@ -1,10 +1,6 @@
 // @flow
 
-import type {
-  ApartmentType,
-  ApartmentSpecs,
-  ApartmentFacility,
-} from './specs.js';
+import type { ApartmentType, Apartment, ApartmentFacility } from './specs.js';
 import { getApartmentSpecs, getFacilitySpecs } from './specs.js';
 
 type Building = {
@@ -12,18 +8,13 @@ type Building = {
   floors: number,
   apartmentType: ApartmentType,
   apartmentsPerFloor: number,
+  customApartments: Array<CustomApartment>,
 };
 
-export function computeApartmentOutput(apartmentSpecs: ApartmentSpecs): number {
-  return apartmentSpecs.facilities.reduce(
-    (outputAcc: number, facility: ApartmentFacility): number => {
-      return (
-        outputAcc + getFacilitySpecs(facility.type).output * facility.quantity
-      );
-    },
-    0
-  );
-}
+type CustomApartment = Apartment & {
+  floorNumber: number,
+  apartmentNumber: number,
+};
 
 export function buildResidenceOutputMap(buildings: Array<Building>) {
   const residenceOutputMap = { buildings: [], total: 0 };
@@ -46,7 +37,8 @@ export function buildBuildingOutputMap(building: Building) {
     const floorMap = buildFloorOutputMap(
       i,
       building.apartmentType,
-      building.apartmentsPerFloor
+      building.apartmentsPerFloor,
+      building.customApartments
     );
     buildingMap.floors.push(floorMap);
     buildingMap.total += floorMap.total;
@@ -57,12 +49,18 @@ export function buildBuildingOutputMap(building: Building) {
 export function buildFloorOutputMap(
   floorNumber: number,
   apartmentType: ApartmentType,
-  numberOfApartments: number
+  numberOfApartments: number,
+  customApartments: Array<CustomApartment> = []
 ) {
   const floorMap = { number: floorNumber, apartments: [], total: 0 };
   for (let i = 1; i <= numberOfApartments; i++) {
+    const customApartment = findCustomApartment(
+      customApartments,
+      floorNumber,
+      i
+    );
     const apartmentOutput = computeApartmentOutput(
-      getApartmentSpecs(apartmentType)
+      customApartment || getApartmentSpecs(apartmentType)
     );
     floorMap.apartments.push({
       number: i,
@@ -71,4 +69,28 @@ export function buildFloorOutputMap(
     floorMap.total += apartmentOutput;
   }
   return floorMap;
+}
+
+export function computeApartmentOutput(apartmentSpecs: Apartment): number {
+  return apartmentSpecs.facilities.reduce(
+    (outputAcc: number, facility: ApartmentFacility): number => {
+      return (
+        outputAcc + getFacilitySpecs(facility.type).output * facility.quantity
+      );
+    },
+    0
+  );
+}
+
+export function findCustomApartment(
+  apartmentList: Array<CustomApartment>,
+  floorNumber: number,
+  apartmentNumber: number
+): ?CustomApartment {
+  return apartmentList.find((apartment: CustomApartment) => {
+    return (
+      apartment.floorNumber === floorNumber &&
+      apartment.apartmentNumber === apartmentNumber
+    );
+  });
 }
