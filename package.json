@@ -8,6 +8,7 @@
   "devDependencies": {
     "babel-eslint": "^8.0.2",
     "babel-jest": "^21.2.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.11.0",
     "eslint-config-prettier": "^2.7.0",
@@ -24,5 +25,7 @@
     "lint": "./node_modules/.bin/eslint .",
     "validate": "jest --coverage && flow && ./node_modules/.bin/eslint ."
   },
-  "pre-push": ["validate"]
+  "pre-push": [
+    "validate"
+  ]
 }
